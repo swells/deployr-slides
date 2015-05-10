@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
 
-    <title>DeployR CLI</title>
+    <title>DeployR</title>
 
     <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
     <meta name="author" content="Hakim El Hattab">
@@ -43,8 +43,8 @@
         <!-- Any section element inside of this container is displayed as a slide -->
         <div class="slides">
             <section>
-                <h1>deployr-cli</h1>
-                <h3>The DeployR command line interface</h3>
+                <h1>DeployR</h1>
+                <h3>R Analytics Integration</h3>
                 <p>
                     <img src="./img/cut1.gif">
                 </p>
@@ -56,99 +56,90 @@
                 </p>
                 <p>
                     <small>
-						https://github.com/deployr/deployr-cli
+						https://github.com/deployr
 					</small>
                 </p>
             </section>
 
             <section>
-                <h2>What it is</h2>
-                <p>
-                    CLI == command line interface
-                </p>
-                <p>
-                    Designed to be a tool for running useful DeployR utilities
-                </p>
-                <pre><code data-trim>
-# Authenticate with DeployR                
-$ di login                
-				</code></pre>
-            </section>
-
-            <section>
-                <h2>What is it built with</h2>
-                <p class="fragment">100% JavaScript</p>
-                <p class="fragment">... and <a href="http://nodejs.org/">Node.js</a>
-                </p>
-                <p></p>
-                <p class="fragment">
-                    Built on Google Chrome's V8 JavaScript runtime
-                </p>
-                <p class="fragment">
-                    JavaScript <strong style="color:#ffc3e1;">EVERYWHERE</strong> not just the browser
-                </p>
-                <pre class="fragment"><code data-trim>
-$ echo 'foo' | yourscript
-
-$ ps aux | grep yourscript
-</code></pre>
-                <p class="fragment">
-                    We used <a>DeployR APIS</a> to build the DeployR CLI
-                </p>
-            </section>
-
-            <section>
-                <h2>How to get it</h2>
-                <p>
-                    <ol>
-                        <li>Download <a href="http://nodejs.org/">Node.js</a>
-                        </li>
-                        <li>
-                            <p>One-line install using <strong>npm</strong> <small style="font-size:15px;margin-top:15px;">(Node Package Manager)</small>
-                            </p>
-                            <pre style="width:400px;"><code data-trim>
-$ npm install -g deployr-cli
-					</code></pre>
-                        </li>
-                    </ol>
-                </p>
-                <p class="fragment">This will put the <a>di</a> command in your system path</p>
-                <pre class="fragment"><code data-trim>
-$ di &#60;resource&#62; &#60;action&#62; &#60;param1&#62; &#60;param2&#62; ...
-                </code></pre>
-                <pre class="fragment"><code data-trim>
-$ di login
-
-$ di whoami
-
-$ di help
-
-$ di install example
-                </code></pre>
-            </section>
-
-            <section>
-                <h2>Why did we build it</h2>
+                <h2>Complexity</h2>
                 <ul>
-                    <li class="fragment">Provide useful DeployR tools</li>
-                    <li class="fragment">Push useful tools outside of DeployR/RRE releases via Github</img>
-                    </li>
+                    <li class="fragment">Proliferation of complex middle-ware tools</li>
+                    <li class="fragment">Complex UI/UX</li>
+                    <li class="fragment">Many devices: Desktop. Laptop. Netbook. Tablet. Phone. TV. Appliances. Wearables.</li>
+                    <li class="fragment">Silos of expertise and knowledge</li>                                                                        
                 </ul>
             </section>
 
+            <section>
+                <h2>Agnostic Information Flow</h2>
+                <p><h4>We want</h4></p>
+                 <ul>
+                     <li>Flexible analytics integration into anything</li>
+                     <li>Easy deployment of your analytics</li>
+                     <li>We can not be opinionated!</li>
+                </ul> 
+            </section>
+            
+            <section>
+                <h2>DeployR - <small style="vertical-align: middle">Simple APIs for integration</small></h2>
+                 <ul>
+                     <li>Turns R scripts into secure analytics web services </li>
+                     <li> Easy for application developers to collaborate with data scientists to integrate R analytics w/o knowledge of R</li>
+                     <li>Not opinionated in how you develop or consume the R analytics</li>
+                </ul> 
+            </section>
+            
+            <section>
+                <h2>Basic Workflow</h2>
+                <p>
+                    <img src="./img/workflow.png"></img>
+                </p>                
+            </section>            
+            
+            <section>
+                <h2>Roles & Responsibilities</h2>
+                <p>
+                    <img src="./img/actors.png"></img>
+                </p>                
+            </section>     
+            
+            <section>
+                <h2>R Scripts == R Scripts</h2>
+                <ul>
+                    <li class="fragment">Local R Script is the same as the deployed R Script in DeployR</li>
+                    <li class="fragment">Makes for R code portability, testability, and reusability</li>
+                    <li class="fragment">Productive workflow</li>
+                    <li class="fragment">True separation of concerns
+                        <ul>
+                            <li>Separate from the presentation layer</li>
+                            <li>Separate from the application domain layer</li> 
+                            <li>Your analytics are just your analytics layer</li>                           
+                        </ul>
+                    </li>
+                    <li class="fragment">DeployR is not opinionated so do what makes sense</li>
+                </ul>             
+            </section>   
+            
+            <section>
+                <h2>Architecture</h2>
+                <p>
+                    <img src="./img/architecture.png"></img>
+                </p>                
+            </section>                                                 
+            
+            <section>
+                <h2>Architecture</h2>
+                 <ul>
+                     <li>DeployR is a standalone server product</li>
+                     <li>Behaves like an on-demand R analytics engine</li>
+                     <li>Supports a scalable grid framework for your R sessions</li>                     
+                </ul>                  
+            </section>
+                        
             <section>
                 <h1>&#60; Examples /&#62;</h1>
             </section>
-
-            <section>
-                <h2>Whats next <small style="margin-top:5px;">(7.4.0)</small></h2>
-                <ul>
-                    <li>External Repository API</li>
-                    <li>Repository Shell Script Execution API</li>
-                    <li>How do these relate to the CLI?</li>
-                </ul>
-            </section>
-
 
             <section>
             <h1>The End</h1>
