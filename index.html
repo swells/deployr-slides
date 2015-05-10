@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>DeployR CLI</title>
+
+    <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+    <meta name="author" content="Hakim El Hattab">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="css/reveal.min.css">
+    <link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+    <script>
+    if (window.location.search.match(/print-pdf/gi)) {
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'css/print/pdf.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    }
+    </script>
+
+    <!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+</head>
+
+<body>
+
+    <div class="reveal">
+
+        <!-- Any section element inside of this container is displayed as a slide -->
+        <div class="slides">
+            <section>
+                <h1>deployr-cli</h1>
+                <h3>The DeployR command line interface</h3>
+                <p>
+                    <img src="./img/cut1.gif">
+                </p>
+                <p>
+                    <small>
+						<span style="color:#ffc3e1; font-size:15px;">♥ &nbsp;</span> The DeployR Team 
+						<a href="https://github.com/deployr"> &nbsp; @ github</a>
+					</small>
+                </p>
+                <p>
+                    <small>
+						https://github.com/deployr/deployr-cli
+					</small>
+                </p>
+            </section>
+
+            <section>
+                <h2>What it is</h2>
+                <p>
+                    CLI == command line interface
+                </p>
+                <p>
+                    Designed to be a tool for running useful DeployR utilities
+                </p>
+                <pre><code data-trim>
+# Authenticate with DeployR                
+$ di login                
+				</code></pre>
+            </section>
+
+            <section>
+                <h2>What is it built with</h2>
+                <p class="fragment">100% JavaScript</p>
+                <p class="fragment">... and <a href="http://nodejs.org/">Node.js</a>
+                </p>
+                <p></p>
+                <p class="fragment">
+                    Built on Google Chrome's V8 JavaScript runtime
+                </p>
+                <p class="fragment">
+                    JavaScript <strong style="color:#ffc3e1;">EVERYWHERE</strong> not just the browser
+                </p>
+                <pre class="fragment"><code data-trim>
+$ echo 'foo' | yourscript
+
+$ ps aux | grep yourscript
+</code></pre>
+                <p class="fragment">
+                    We used <a>DeployR APIS</a> to build the DeployR CLI
+                </p>
+            </section>
+
+            <section>
+                <h2>How to get it</h2>
+                <p>
+                    <ol>
+                        <li>Download <a href="http://nodejs.org/">Node.js</a>
+                        </li>
+                        <li>
+                            <p>One-line install using <strong>npm</strong> <small style="font-size:15px;margin-top:15px;">(Node Package Manager)</small>
+                            </p>
+                            <pre style="width:400px;"><code data-trim>
+$ npm install -g deployr-cli
+					</code></pre>
+                        </li>
+                    </ol>
+                </p>
+                <p class="fragment">This will put the <a>di</a> command in your system path</p>
+                <pre class="fragment"><code data-trim>
+$ di &#60;resource&#62; &#60;action&#62; &#60;param1&#62; &#60;param2&#62; ...
+                </code></pre>
+                <pre class="fragment"><code data-trim>
+$ di login
+
+$ di whoami
+
+$ di help
+
+$ di install example
+                </code></pre>
+            </section>
+
+            <section>
+                <h2>Why did we build it</h2>
+                <ul>
+                    <li class="fragment">Provide useful DeployR tools</li>
+                    <li class="fragment">Push useful tools outside of DeployR/RRE releases via Github</img>
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h1>&#60; Examples /&#62;</h1>
+            </section>
+
+            <section>
+                <h2>Whats next <small style="margin-top:5px;">(7.4.0)</small></h2>
+                <ul>
+                    <li>External Repository API</li>
+                    <li>Repository Shell Script Execution API</li>
+                    <li>How do these relate to the CLI?</li>
+                </ul>
+            </section>
+
+
+            <section>
+            <h1>The End</h1>
+            <p>find us on Github</p>
+            <a href="https://github.com/deployr">https://github.com/deployr</a>
+            </section>            
+        </div>
+
+    </div>
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.min.js"></script>
+
+    <script>
+    // Full list of configuration options available here:
+    // https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+        // Parallax scrolling
+        // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+        // parallaxBackgroundSize: '2100px 900px',
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [{
+            src: 'lib/js/classList.js',
+            condition: function() {
+                return !document.body.classList;
+            }
+        }, {
+            src: 'plugin/markdown/marked.js',
+            condition: function() {
+                return !!document.querySelector('[data-markdown]');
+            }
+        }, {
+            src: 'plugin/markdown/markdown.js',
+            condition: function() {
+                return !!document.querySelector('[data-markdown]');
+            }
+        }, {
+            src: 'plugin/highlight/highlight.js',
+            async: true,
+            callback: function() {
+                hljs.initHighlightingOnLoad();
+            }
+        }, {
+            src: 'plugin/zoom-js/zoom.js',
+            async: true,
+            condition: function() {
+                return !!document.body.classList;
+            }
+        }, {
+            src: 'plugin/notes/notes.js',
+            async: true,
+            condition: function() {
+                return !!document.body.classList;
+            }
+        }]
+    });
+    </script>
+
+</body>
+
+</html>
